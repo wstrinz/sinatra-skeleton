@@ -1,6 +1,6 @@
-source :gemcutter
+source 'https://rubygems.org'
 
-gem 'sinatra', '~> 1.2'
-gem 'sinatra-reloader', '~> 0.5'
+gem 'sinatra'
+gem 'sinatra-reloader'
 gem 'haml'
 gem 'sass'

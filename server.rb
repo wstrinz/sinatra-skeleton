@@ -1,6 +1,9 @@
 Encoding.default_internal = Encoding.default_external = 'UTF-8'
 
-require "rubygems"
+def path_to(dir)
+  File.join(File.dirname(__FILE__), dir)
+end
+
 require "bundler/setup"
 require "sinatra"
 
@@ -9,13 +12,13 @@ require "haml"
 require "sass/plugin/rack"
 
 # Require classes needed for project
-require File.join(File.dirname(__FILE__), *%w[lib foo])
+require path_to('lib/foo')
 
 use Sass::Plugin::Rack
 
 configure do
-  set :views, File.expand_path(File.join(File.dirname(__FILE__), 'views'))
-  set :public, File.expand_path(File.join(File.dirname(__FILE__), 'public'))
+  set :views, File.expand_path(path_to 'views')
+  set :public_folder, File.expand_path(path_to 'public')
   set :haml, { :attr_wrapper => '"', :format => :html5 }
 end
 
