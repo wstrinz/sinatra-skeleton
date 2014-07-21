@@ -4,12 +4,12 @@ def path_to(dir)
   File.join(File.dirname(__FILE__), dir)
 end
 
-require "bundler/setup"
-require "sinatra"
+require 'bundler/setup'
+require 'sinatra'
 
-require "erb"
-require "haml"
-require "sass/plugin/rack"
+require 'erb'
+require 'haml'
+require 'sass/plugin/rack'
 
 # Require classes needed for project
 require path_to('lib/foo')
